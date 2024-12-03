@@ -20,7 +20,14 @@ async function runDays() {
         console.log()
         console.log(file.replace('.ts','').toUpperCase())
         const dayModule = await import(`./days/${file}`);
+
+        performance.mark('mark1');
         dayModule.default();
+        performance.mark('mark2');
+        const measure = performance.measure(`${file}_time`, 'mark1', 'mark2')
+
+        console.log(`${file} time: ${measure.duration.toFixed(3)}ms`);
+
         console.log('--------------------------------------------------')
     }
 }

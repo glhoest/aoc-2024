@@ -27,7 +27,6 @@ function part1() {
         listC.push(Math.abs(a - b));
     }
 
-    console.log("day 1 part 1")
     console.log(listC.reduce((a, b) => a + b))
 }
 
@@ -56,7 +55,6 @@ function part2() {
         listC.push((counts[a]??0)*a);
     }
 
-    console.log("day 1 part 2")
     console.log(listC.reduce((a, b) => a + b))
 }
 
