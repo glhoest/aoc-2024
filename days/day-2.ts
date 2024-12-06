@@ -57,7 +57,7 @@ function part2() {
             const a = data[i - 1];
             const b = data[i];
             const diff = a - b
-            diffs.push(a - b);
+            diffs.push(diff);
         }
 
         const overCharge = diffs.filter((d) => Math.abs(d) > 3).length;
@@ -76,9 +76,9 @@ function part2() {
 
 
                 if (checkSafe(newDataA.join(' '))) {
-                    safeReports++ // todo risk of multiple increment per string
+                    safeReports++ // todo risk of multiple increment per report
                 } else if (checkSafe(newDataB.join(' '))) {
-                    safeReports++ // todo risk of multiple increment per string
+                    safeReports++ // todo risk of multiple increment per report
                 }
             } else if (decrease === 1) {
                 const indexA = diffs.findIndex((d) => d < 0)
@@ -88,9 +88,9 @@ function part2() {
                 const newDataB = data.toSpliced(indexB, 1)
 
                 if (checkSafe(newDataA.join(' '))) {
-                    safeReports++ // todo risk of multiple increment per string
+                    safeReports++ // todo risk of multiple increment per report
                 } else if (checkSafe(newDataB.join(' '))) {
-                    safeReports++ // todo risk of multiple increment per string
+                    safeReports++ // todo risk of multiple increment per report
                 }
             }
         } else if (stagnated === 1) {
@@ -102,7 +102,7 @@ function part2() {
 
 
             if (checkSafe(newDataA.join(' '))) {
-                safeReports++ // todo risk of multiple increment per string
+                safeReports++ // todo risk of multiple increment per report
             }
         } else if (overCharge === 1) {
             const indexA = diffs.findIndex((d) => Math.abs(d) > 3)
@@ -113,9 +113,9 @@ function part2() {
 
 
             if (checkSafe(newDataA.join(' '))) {
-                safeReports++ // todo risk of multiple increment per string
+                safeReports++ // todo risk of multiple increment per report
             } else if (checkSafe(newDataB.join(' '))) {
-                safeReports++ // todo risk of multiple increment per string
+                safeReports++ // todo risk of multiple increment per report
             }
         }
     }
