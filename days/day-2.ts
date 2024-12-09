@@ -74,7 +74,6 @@ function part2() {
                 const newDataA = data.toSpliced(indexA, 1)
                 const newDataB = data.toSpliced(indexB, 1)
 
-
                 if (checkSafe(newDataA.join(' '))) {
                     safeReports++ // todo risk of multiple increment per report
                 } else if (checkSafe(newDataB.join(' '))) {
